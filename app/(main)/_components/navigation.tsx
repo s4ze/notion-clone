@@ -1,20 +1,23 @@
 "use client";
 
 import { ElementRef, useEffect, useRef, useState } from "react";
-import { ChevronsLeftIcon, MenuIcon } from "lucide-react";
-import { useQuery } from "convex/react";
-
+import { ChevronsLeftIcon, MenuIcon, PlusCircle, Search, Settings } from "lucide-react";
+import { useMutation, useQuery } from "convex/react";
+import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
+import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
-import { useMediaQuery } from "usehooks-ts";
-import { UserItem } from "./user-item";
 import { api } from "@/convex/_generated/api";
+
+import { UserItem } from "./user-item";
+import { Item } from "./item";
 
 export const Navigation = () => {
   const pathName = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const documents = useQuery(api.documents.get)
+  const documents = useQuery(api.documents.get);
+  const create = useMutation(api.documents.create);
 
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
@@ -91,6 +94,16 @@ export const Navigation = () => {
     }
   }
 
+  const handleCreate = () => {
+    const promise = create({ title: "Untitled" });
+
+    toast.promise(promise, {
+      loading: "Creaing a new note...",
+      success: "New note created!",
+      error: "Failed to create new note."
+    })
+  }
+
   return (
     <>
       <aside
@@ -116,6 +129,22 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
+          <Item
+            label="Search"
+            icon={Search}
+            isSearch
+            onClick={() => { }}
+          />
+          <Item
+            label="Settings"
+            icon={Settings}
+            onClick={() => { }}
+          />
+          <Item
+            onClick={handleCreate}
+            label="New page"
+            icon={PlusCircle}
+          />
         </div>
         <div className="mt-4">
           {documents?.map((document) => (
