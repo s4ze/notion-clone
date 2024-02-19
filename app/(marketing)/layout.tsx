@@ -6,8 +6,7 @@ const MarketingLayout = ({
   children: React.ReactNode;
 }) => {
   return (
-    // Изначально было h-full
-    <div className="h-auto dark:bg-[#1F1F1F]">
+    <div className="h-full dark:bg-[#1F1F1F]">
       <NavBar />
       <main className="h-full pt-40">
         {children}
