@@ -12,15 +12,15 @@ import { CoverImage } from "@/components/cover";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Editor } from "@/components/editor";
 
-interface DocumentIdPageProps {
+interface DocumentIdPreviewPageProps {
   params: {
     documentId: Id<"documents">;
   };
 }
 
-const DocumentIdPage = ({
+const DocumentIdPreviewPage = ({
   params
-}: DocumentIdPageProps) => {
+}: DocumentIdPreviewPageProps) => {
   const document = useQuery(api.documents.getById, {
     documentId: params.documentId
   })
@@ -60,10 +60,11 @@ const DocumentIdPage = ({
 
   return (
     <div className="pb-40">
-      <CoverImage url={document.coverImage} />
+      <CoverImage preview url={document.coverImage} />
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
-        <Toolbar initialData={document} />
+        <Toolbar preview initialData={document} />
         <Editor
+          editable={false}
           onChange={onChange}
           initialContent={document.content}
         />
@@ -72,4 +73,4 @@ const DocumentIdPage = ({
   );
 }
 
-export default DocumentIdPage;
+export default DocumentIdPreviewPage;
