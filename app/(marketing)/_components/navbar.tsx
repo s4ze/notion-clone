@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 import { Logo } from "./logo";
 import { Button } from "@/components/ui/button";
-import { Spinner } from "./spinner";
+import { Spinner } from "../../../components/spinner";
 
 export const NavBar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();

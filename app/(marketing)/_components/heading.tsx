@@ -6,7 +6,7 @@ import { SignInButton } from "@clerk/clerk-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { Spinner } from "./spinner";
+import { Spinner } from "../../../components/spinner";
 
 export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
