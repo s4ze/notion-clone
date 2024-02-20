@@ -1,3 +1,10 @@
+Клон Notion'а, созданный для обучения Next, React, Convex, Clerk, .
+
+<img src="https://github.com/s4ze/notion-clone/assets/126989735/c5b8de6c-86dc-4aaf-a779-65dfce011bb6" height="360" width="640">
+<img src="https://github.com/s4ze/notion-clone/assets/126989735/8f430e9a-fab5-4a76-bdc9-2e26aa8a749d" height="360" width="640">
+<img src="https://github.com/s4ze/notion-clone/assets/126989735/2ad97cdc-5f8d-41e1-beeb-4a2946818923" height="360" width="640">
+<img src="https://github.com/s4ze/notion-clone/assets/126989735/1aca3a35-4de7-44b2-9fe9-b3f3eb560d34" height="360" width="640">
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
