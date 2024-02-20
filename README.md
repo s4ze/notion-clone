@@ -1,4 +1,4 @@
-Клон Notion'а, созданный для обучения Next, React, Convex, Clerk, .
+Клон Notion'а, созданный для обучения Next, React, Convex, Clerk, Edgestore.
 
 <img src="https://github.com/s4ze/notion-clone/assets/126989735/c5b8de6c-86dc-4aaf-a779-65dfce011bb6" height="360" width="640">
 <img src="https://github.com/s4ze/notion-clone/assets/126989735/8f430e9a-fab5-4a76-bdc9-2e26aa8a749d" height="360" width="640">
